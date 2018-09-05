@@ -1,0 +1,35 @@
+.nav-ul {
+  list-style: none;
+
+}
+
+.nav-ul li{
+display: inline;
+margin: 5px;
+
+}
+
+.product-listing {
+  display: flex;
+  flex: 1;
+  flex-wrap:wrap;
+  flex-direction: row;
+  /* padding: 10px; */
+  margin: 20px auto;
+  width: 95%;
+  background-color: white;
+}
+
+ .product-item {
+width: 300px;
+margin: 15px;
+}
+
+.image-placeholder {
+  width:150px;
+  height: 150px;
+  background-color: red;
+  color: white;
+  border: solid 1px white;
+  margin-bottom: 10px;
+}
