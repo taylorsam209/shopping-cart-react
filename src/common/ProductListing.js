@@ -18,7 +18,7 @@ class ProductListing extends React.Component {
                 <ProductItem 
                 key={index} 
                 product={product} 
-                cart={this.props.cart.filter(cartItem => cartItem.id === product.id)[0]}
+                cartItem={this.props.cart.filter(cartItem => cartItem.id === product.id)[0]}
                 />
             )}
         </div>

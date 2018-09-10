@@ -35,8 +35,15 @@ const reducer = (state = initialState, action) => {
             return addToCart(state.cart, action.payload)
             // return Object.assign({}, state, { cart: [...state.cart, action.payload] });
         case 'REMOVE_FROM_CART':
-            const firstMatchIndex = state.indexOf(action.payload)
-            return state.filter((item, index) => index !== firstMatchIndex)
+        const cartWithoutItems = (cart, item) => cart.filter(cartItem => cartItem.id !== item.id)
+        const removeFromCart = (cart, item) => {
+            return item.quantity === 1 ?
+            Object.assign({}, state, {cart: [...cartWithoutItems(cart, item)]}) 
+            : Object.assign({}, state, {cart: [...cartWithoutItems(cart, item), {...item, quantity: item.quantity - 1}]})
+        }
+        return removeFromCart(state.cart, action.payload);
+            // const firstMatchIndex = state.indexOf(action.payload)
+            // return state.filter((item, index) => index !== firstMatchIndex)
         default:
             return state;
     }

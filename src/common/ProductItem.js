@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addToCart, removeFromCart } from '../ducks/CartReducer';
+import AddButton from './AddButton';
+import RemoveButton from './RemoveButton';
 
-const ProductItem = (props) => {
-    const {cart, product, addToCart, removeFromCart } = props;
-    console.log('listitem', cart)
-    // const itemInCart = cart.filter(item => item.id === product.id)[0]
-    // console.log('item in cart', itemInCart)
+const ProductItem = ({cartItem, product, addToCart, removeFromCart}) => {
+    console.log('item in cart', cartItem)
     return (
         <div className='product-item'>
             <h3>{product.name}</h3>
@@ -20,9 +19,16 @@ const ProductItem = (props) => {
             <div>{product.description}</div>
             <div>${product.price}</div>
             <div>
-                <button onClick={() => { addToCart(product) }}>Add to Cart({
+                {/* <button onClick={() => { addToCart(product) }}>Add to Cart({
                     (cart && cart.quantity) || 0
-                })</button>
+                })</button> */}
+                <AddButton 
+                addToCart={addToCart}
+                cartItem={cartItem}
+                product={product}
+                />
+
+                {cartItem ? <RemoveButton cartItem={cartItem} removeFromCart={removeFromCart} /> : null}
             </div>
         </div>
     )
