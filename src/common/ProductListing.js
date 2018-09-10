@@ -10,6 +10,7 @@ class ProductListing extends React.Component {
     }
 
     render() {
+        console.log('cart from reducer', this.props.cart)
         return(
 
         <div className='product-listing'>
@@ -17,7 +18,7 @@ class ProductListing extends React.Component {
                 <ProductItem 
                 key={index} 
                 product={product} 
-                cart={cartItemsWithQuantity(this.props.cart) }
+                cart={this.props.cart.filter(cartItem => cartItem.id === product.id)[0]}
                 />
             )}
         </div>

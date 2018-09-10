@@ -4,9 +4,9 @@ import { addToCart, removeFromCart } from '../ducks/CartReducer';
 
 const ProductItem = (props) => {
     const {cart, product, addToCart, removeFromCart } = props;
-    console.log('listitem', product)
-    const itemInCart = cart.filter(item => item.id === product.id)[0]
-    console.log('item in cart', itemInCart)
+    console.log('listitem', cart)
+    // const itemInCart = cart.filter(item => item.id === product.id)[0]
+    // console.log('item in cart', itemInCart)
     return (
         <div className='product-item'>
             <h3>{product.name}</h3>
@@ -21,7 +21,7 @@ const ProductItem = (props) => {
             <div>${product.price}</div>
             <div>
                 <button onClick={() => { addToCart(product) }}>Add to Cart({
-                    (itemInCart && itemInCart.quantity) || 0
+                    (cart && cart.quantity) || 0
                 })</button>
             </div>
         </div>
