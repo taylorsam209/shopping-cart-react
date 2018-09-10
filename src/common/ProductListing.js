@@ -1,13 +1,8 @@
 import React from 'react';
 import ProductItem from './ProductItem';
 import { connect } from 'react-redux';
-import { cartItemsWithQuantity } from '../common/Cart';
 
 class ProductListing extends React.Component {
-
-    componentDidUpdate(prevProps) {
-        console.log('component did update', prevProps)
-    }
 
     render() {
         console.log('cart from reducer', this.props.cart)
@@ -25,13 +20,6 @@ class ProductListing extends React.Component {
         )
     }
 }
-
-
-// const ProductListing = (props) => {
-//     console.log(props.cart)
-//     return (
-//     )
-// }
 
 function mapStateToProps(state) {
     return {

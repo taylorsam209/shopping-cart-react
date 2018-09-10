@@ -4,31 +4,31 @@ import { addToCart, removeFromCart } from '../ducks/CartReducer';
 import AddButton from './AddButton';
 import RemoveButton from './RemoveButton';
 
-const ProductItem = ({cartItem, product, addToCart, removeFromCart}) => {
+const ProductItem = ({ cartItem, product, addToCart, removeFromCart }) => {
     console.log('item in cart', cartItem)
+    console.log('product', product)
     return (
         <div className='product-item'>
             <h3>{product.name}</h3>
-            <div className='image-placeholder'>Image Placeholder</div>
-            {/* <img
+            <img
             height={100}
             title={product.name}
-            src={`products/${product.image}`}
-            
-            /> */}
+            src={`../products/${product.image}`}
+            />
             <div>{product.description}</div>
             <div>${product.price}</div>
             <div>
-                {/* <button onClick={() => { addToCart(product) }}>Add to Cart({
-                    (cart && cart.quantity) || 0
-                })</button> */}
-                <AddButton 
-                addToCart={addToCart}
-                cartItem={cartItem}
-                product={product}
+                <AddButton
+                    addToCart={addToCart}
+                    cartItem={cartItem}
+                    product={product}
                 />
-
-                {cartItem ? <RemoveButton cartItem={cartItem} removeFromCart={removeFromCart} /> : null}
+                {cartItem ?
+                    <RemoveButton
+                        cartItem={cartItem}
+                        removeFromCart={removeFromCart}
+                    />
+                    : null}
             </div>
         </div>
     )
