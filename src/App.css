@@ -36,3 +36,27 @@ text-align: center;
   border: solid 1px white;
   margin-bottom: 10px;
 }
+
+.input-bar{
+  height: 50px;
+  width: 200px;
+  margin: 30px auto;
+}
+
+.movie-list{
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.movie-container {
+  background-color: white;
+  width: 450px;
+  height: 500px;
+  border: solid 1px rgb(145, 180, 112);
+  margin: 10px;
+  text-align: center;
+  overflow: auto;
+  box-shadow: 2px;
+}

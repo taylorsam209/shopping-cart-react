@@ -10,6 +10,7 @@ const Navigation = (props) => {
 <ul className='nav-ul'>
   <li><NavLink style={{textDecoration: 'none', color: 'black'}}to ='/'>Home</NavLink></li>
   <li><NavLink to ='/cart'>Cart</NavLink></li>
+  <li><NavLink to='/movie'>Movie</NavLink></li>
 </ul>
   </nav>
   )
